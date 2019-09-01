@@ -15,6 +15,7 @@ class CreateInfeedsTable extends Migration
     {
         Schema::create('infeeds', function (Blueprint $table) {
             $table->bigIncrements('id');
+            
             $table->timestamps();
         });
     }
