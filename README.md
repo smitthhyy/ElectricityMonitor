@@ -1,5 +1,5 @@
 #Trevor's Electricity Monitor
-
+2nd Sep 2019 update - initial development, check back later.
 ##Description
 
 ##Installation
