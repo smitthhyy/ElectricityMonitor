@@ -1,12 +1,13 @@
-#Trevor's Electricity Monitor
-2nd Sep 2019 update - initial development, not a complete application yet - check back later.
-##Description
+# Trevor's Electricity Monitor
+### 2nd Sep 2019 update
+Initial development, not a complete application yet - check back later.
+## Description
 Monitor electricity useage in my home using a number of technologies including:
 - CurrentCost Envi-R 3 phase mains monitor
 - TPLink HS110 Smart WiFi Plug with Energy Monitoring
 - Sengled LED lights
 - Some custom hardware based on ESP32 and ESP8266 devices
-##Installation
+## Installation
 1. Install from the Git repository
 2. composer install
 3. npm install
