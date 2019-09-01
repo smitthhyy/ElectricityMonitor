@@ -20,10 +20,25 @@
         "resolve-url-loader": "^2.3.1",
         "sass": "^1.15.2",
         "sass-loader": "^7.1.0",
-        "vue": "^2.5.17"
+        "vue": "^2.5.17",
+        "vue-class-component": "^7.1.0",
+        "vue-property-decorator": "^8.2.1",
+        "vue-template-compiler": "^2.6.10",
+        "@fortawesome/fontawesome-pro": "^5.9.0",
+        "admin-lte": "^3.0.0-beta.1",
+        "datatables.net-dt": "^1.10.19",
+        "echarts": "^4.2.1",
+        "gijgo": "^1.9.13",
+        "simple-line-icons": "^2.4.1",
+        "vue-bootstrap4-table": "^1.1.9",
+        "vue-cookie": "^1.1.4",
+        "vue-cookies": "^1.5.13",
+        "vue-observe-visibility": "^0.4.4",
+        "vue-session": "^1.0.0"
     },
     "dependencies": {
         "eyes": "^0.1.8",
+        "serialport": "^7.1.5",
         "tplink-smarthome-api": "^1.2.0",
         "util": "^0.12.1",
         "xml2js": "^0.4.19"

@@ -1,11 +1,57 @@
 const { Client } = require('tplink-smarthome-api');
 const util = require('util');
-var sqlite3 = require('sqlite3').verbose();
-var db = new sqlite3.Database('/var/lib/cloud9/elecmon/db.sqlite');
+let sqlite3 = require('sqlite3').verbose();
+
 const client = new Client();
-var logEvent = function (eventName, device, state) {
+
+let saveDevice = function (device, state) {
+    let db = new sqlite3.Database('/var/lib/cloud9/elecmon/db.sqlite');
+    let stmt = db.prepare("REPLACE INTO hs110_details VALUES (?, ?, ?, ?, ?)");
+    stmt.run(
+        device.macNormalized.toLowerCase(),
+        device.alias,
+        device.host,
+        device.port,
+        state
+    );
+    stmt.finalize();
+    db.close();
+};
+
+let saveMetrics = function (device, state) {
+    let db = new sqlite3.Database('/var/lib/cloud9/elecmon/db.sqlite');
+    let stmt = db.prepare("INSERT INTO hs110 VALUES (?, ?, ?, ?, ?, ?)");
+    stmt.run(
+        device.macNormalized.toLowerCase(),
+        Math.floor(Date.now() / 1000),
+        state.voltage_mv,
+        state.current_ma,
+        state.power_mw,
+        state.total_wh
+    );
+    stmt.finalize();
+    db.close();
+};
+
+let logEvent = function (eventName, device, state) {
     const stateString = (state != null ? util.inspect(state) : '');
-    console.log(`${(new Date()).toISOString()} ${eventName} ${device.model} ${device.alias} ${device.host}:${device.port} ${stateString}`);
+
+    if (eventName === "emeter-realtime-update") {
+        console.log(`${(new Date()).toISOString()} ${eventName} ${device.model} ${device.alias} ${device.host}:${device.port} ${state.power}`);
+        saveMetrics(device, state);
+    }
+    else if ((eventName === "device-online") || (eventName === "device-new")){
+        console.log(`${(new Date()).toISOString()} ${eventName} ${device.model} ${device.alias} ${device.host}:${device.port}`);
+        saveDevice(device, 1);
+    }
+    else if (eventName === "device-offline") {
+        console.log(`${(new Date()).toISOString()} ${eventName} ${device.model} ${device.alias} ${device.host}:${device.port}`);
+        saveDevice(device, 0);
+    }
+    else {
+        console.log("ALERT **** Did not save record as did not know what sort of event it is");
+        console.log(`${(new Date()).toISOString()} ${eventName} ${device.model} ${device.alias} ${device.host}:${device.port} ${stateString}`);
+    }
 };
 
 // Client events `device-*` also have `bulb-*` and `plug-*` counterparts.

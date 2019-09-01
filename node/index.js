@@ -17,7 +17,7 @@ port.on('data', function(data) {
 
 var updateSensor = function(id, object) {
     watts = parseInt(object.msg.ch1[0].watts[0], 10) + parseInt(object.msg.ch2[0].watts[0], 10) + parseInt(object.msg.ch3[0].watts[0], 10);
-    console.log("phase1: " + parseInt(result['msg']['ch1'][0]['watts'][0], 10).toString() + " + phase2: " + parseInt(result['msg']['ch2'][0]['watts'][0], 10).toString() + " + phase3: " + parseInt(result['msg']['ch3'][0]['watts'][0], 10).toString());
+    console.log("phase1: " + parseInt(object['msg']['ch1'][0]['watts'][0], 10).toString() + " + phase2: " + parseInt(object['msg']['ch2'][0]['watts'][0], 10).toString() + " + phase3: " + parseInt(object['msg']['ch3'][0]['watts'][0], 10).toString());
     dataQueue.push({ id: id, value: watts, date: new Date().getTime() });
 };
 
