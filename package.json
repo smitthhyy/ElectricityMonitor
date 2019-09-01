@@ -21,5 +21,11 @@
         "sass": "^1.15.2",
         "sass-loader": "^7.1.0",
         "vue": "^2.5.17"
+    },
+    "dependencies": {
+        "eyes": "^0.1.8",
+        "tplink-smarthome-api": "^1.2.0",
+        "util": "^0.12.1",
+        "xml2js": "^0.4.19"
     }
 }

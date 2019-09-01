@@ -15,7 +15,8 @@ class CreateInfeedsTable extends Migration
     {
         Schema::create('infeeds', function (Blueprint $table) {
             $table->bigIncrements('id');
-            
+            $table->unsignedInteger('timestamp');
+            $table->integer('watts');
             $table->timestamps();
         });
     }
