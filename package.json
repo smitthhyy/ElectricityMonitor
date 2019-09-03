@@ -39,6 +39,7 @@
     "dependencies": {
         "eyes": "^0.1.8",
         "serialport": "^7.1.5",
+        "sqlite3": "^4.1.0",
         "tplink-smarthome-api": "^1.2.0",
         "util": "^0.12.1",
         "xml2js": "^0.4.19"

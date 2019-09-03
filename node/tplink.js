@@ -5,7 +5,7 @@ let sqlite3 = require('sqlite3').verbose();
 const client = new Client();
 
 let saveDevice = function (device, state) {
-    let db = new sqlite3.Database('/var/lib/cloud9/elecmon/db.sqlite');
+    let db = new sqlite3.Database('/var/www/ElectricityMonitor/database.sqlite');
     let stmt = db.prepare("REPLACE INTO hs110_details VALUES (?, ?, ?, ?, ?)");
     stmt.run(
         device.macNormalized.toLowerCase(),
@@ -19,7 +19,7 @@ let saveDevice = function (device, state) {
 };
 
 let saveMetrics = function (device, state) {
-    let db = new sqlite3.Database('/var/lib/cloud9/elecmon/db.sqlite');
+    let db = new sqlite3.Database('/var/www/ElectricityMonitor/database.sqlite');
     let stmt = db.prepare("INSERT INTO hs110 VALUES (?, ?, ?, ?, ?, ?)");
     stmt.run(
         device.macNormalized.toLowerCase(),

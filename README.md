@@ -1,6 +1,6 @@
 # Trevor's Electricity Monitor
-### 2nd Sep 2019 update
-Initial development, not a complete application yet - check back later.
+### 3rd Sep 2019 update
+Initial development, **not a complete application yet** - check back later.
 ## Description
 Monitor electricity useage in my home using a number of technologies including:
 - CurrentCost Envi-R 3 phase mains monitor

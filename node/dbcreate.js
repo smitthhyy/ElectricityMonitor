@@ -1,6 +1,6 @@
 var sqlite3 = require('sqlite3').verbose();
-var db = new sqlite3.Database('/var/lib/cloud9/elecmon/db.sqlite');
-
+var db = new sqlite3.Database('/var/www/ElectricityMonitor/database.sqlite');
+// var db = new sqlite3.Database('C:/Users/trevo/Dropbox (IoTSD)/workspace/ElectricityMonitor/database.sqlite');
 db.serialize(function() {
     db.run("DROP TABLE IF EXISTS hs110");
     db.run("DROP TABLE IF EXISTS hs110_details");
