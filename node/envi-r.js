@@ -2,10 +2,10 @@ const SerialPort = require('serialport');
 const Readline = require('@serialport/parser-readline');
 const port = new SerialPort('/dev/ttyS1', { baudRate: 57600 });
 const sqlite3 = require('sqlite3').verbose();
-
-let parseString = require('xml2js').parseString;
+const parseString = require('xml2js').parseString;
 
 let buffer = '';
+
 port.on('data', function(data) {
     buffer += data.toString();
     if ( (buffer.trim().startsWith('<msg>')) && (buffer.trim().endsWith('</msg>')) && (buffer.trim().includes('<watts>')) ) {
@@ -56,14 +56,3 @@ let saveToDB = function(object) {
     stmt.finalize();
     db.close();
 };
-
-// let dataQueue = [];
-//
-// setImmediate(function mainLoop() {
-//     for (let i = 0; i < dataQueue.length; i++) {
-//         let data = dataQueue[i];
-//         console.log('Updating sensor [' + data.id + ', ' + data.date + '] with value: ' + data.value);
-//     }
-//     dataQueue = [];
-//     setTimeout(mainLoop, 6000);
-// });
