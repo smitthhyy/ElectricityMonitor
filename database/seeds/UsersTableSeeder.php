@@ -10,16 +10,26 @@ class UsersTableSeeder extends Seeder
         $users = [
             [
                 'id'             => 1,
-                'name'           => 'Admin',
-                'email'          => 'admin@admin.com',
-                'password'       => '$2y$10$QePHJHLW1u0LcDJ/THkfJOBBYzdJmho5/Z31e3X1YGGkx/suaDGGu',
+                'email'          => 'system@iotsd.io',
+                'password'       => 'not_set',
                 'remember_token' => null,
                 'created_at'     => '2019-09-29 06:35:27',
                 'updated_at'     => '2019-09-29 06:35:27',
-                'first_name'     => '',
-                'last_name'      => '',
+                'first_name'     => 'System',
+                'last_name'      => 'Account',
+            ],
+            [
+                'id'             => 2,
+                'email'          => 'trevor@iotsystemsdesign.com.au',
+                'password'       => '$2y$10$cFIpf69GuAwALkK965sPOOE4056hnbEXro0Ptc8VMcykVBIWPzqiy',
+                'remember_token' => null,
+                'created_at'     => '2019-09-29 06:35:27',
+                'updated_at'     => '2019-09-29 06:35:27',
+                'first_name'     => 'Trevor',
+                'last_name'      => 'van der Linden',
             ],
         ];
+
 
         User::insert($users);
     }

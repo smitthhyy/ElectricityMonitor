@@ -1,7 +1,8 @@
 const SerialPort = require('serialport');
 const Readline = require('@serialport/parser-readline');
 const port = new SerialPort('/dev/ttyS1', { baudRate: 57600 });
-const sqlite3 = require('sqlite3').verbose();
+// const sqlite3 = require('sqlite3').verbose();
+const mysql = require('mysql');
 const parseString = require('xml2js').parseString;
 
 let buffer = '';
@@ -44,15 +45,33 @@ let updateSensor = function(id, object) {
 };
 
 let saveToDB = function(object) {
-    let db = new sqlite3.Database('/var/lib/cloud9/elecmon/db.sqlite');
-    let stmt = db.prepare("INSERT INTO infeed VALUES (?, ?, ?, ?, ?)");
-    stmt.run(
+    connection = mysql.createConnection({
+        host     : 'localhost',
+        port     : 3307,
+        user     : 'elecricitymonitor',
+        password : 'elecricitymonitor',
+        database : 'elecricitymonitor'
+    });
+
+    let sql = "INSERT INTO infeed (timestamp, phase_1, phase_2, phase_3, total, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ??, ??)";
+    let now = moment(new Date()).format("YYYY-MM-DD HH:mm:ss");
+    let inserts = [
         Math.floor(Date.now() / 1000),
         object.phase1,
         object.phase2,
         object.phase3,
-        object.total
-    );
-    stmt.finalize();
-    db.close();
+        object.total,
+        now,
+        now
+    ];
+    sql = mysql.format(sql, inserts);
+
+    connection.query(sql,{}, function (error, results, fields) {
+        if (error) throw error;
+        console.log(results.insertId);
+    });
+
+    connection.end(function(err) {
+        if (error) throw error;
+    });
 };

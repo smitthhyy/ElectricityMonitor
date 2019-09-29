@@ -22,6 +22,76 @@
                     </div>
                     <!-- /.info-box -->
                 </div>
+                {{-- Widget - latest entries --}}
+                <div class="{{ $settings3['column_class'] }}">
+                    <h3>{{ $settings3['chart_title'] }}</h3>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                @foreach($settings3['fields'] as $field)
+                                    <th>
+                                        {{ ucfirst($field) }}
+                                    </th>
+                                @endforeach
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse($settings3['data'] as $row)
+                                <tr>
+                                    @foreach($settings3['fields'] as $field)
+                                        <td>
+                                            {{ $row->{$field} }}
+                                        </td>
+                                    @endforeach
+                                </tr>
+                                @empty
+                                <tr>
+                                    <td colspan="{{ count($settings3['fields']) }}">{{ __('No entries found') }}</td>
+                                </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="{{ $chart4->options['column_class'] }}">
+                    <h3>{!! $chart4->options['chart_title'] !!}</h3>
+                    {!! $chart4->renderHtml() !!}
+                </div>
+                <div class="{{ $chart5->options['column_class'] }}">
+                    <h3>{!! $chart5->options['chart_title'] !!}</h3>
+                    {!! $chart5->renderHtml() !!}
+                </div>
+                {{-- Widget - latest entries --}}
+                <div class="{{ $settings6['column_class'] }}">
+                    <h3>{{ $settings6['chart_title'] }}</h3>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                @foreach($settings6['fields'] as $field)
+                                    <th>
+                                        {{ ucfirst($field) }}
+                                    </th>
+                                @endforeach
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse($settings6['data'] as $row)
+                                <tr>
+                                    @foreach($settings6['fields'] as $field)
+                                        <td>
+                                            {{ $row->{$field} }}
+                                        </td>
+                                    @endforeach
+                                </tr>
+                                @empty
+                                <tr>
+                                    <td colspan="{{ count($settings6['fields']) }}">{{ __('No entries found') }}</td>
+                                </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
+
             </div>
         </div>
     </div>
@@ -29,5 +99,5 @@
 @endsection
 @section('scripts')
 @parent
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>{!! $chart1->renderJs() !!}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>{!! $chart1->renderJs() !!}{!! $chart4->renderJs() !!}{!! $chart5->renderJs() !!}
 @endsection

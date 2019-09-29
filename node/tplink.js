@@ -1,36 +1,94 @@
 const { Client } = require('tplink-smarthome-api');
 const util = require('util');
-let sqlite3 = require('sqlite3').verbose();
+// let sqlite3 = require('sqlite3').verbose();
+const mysql = require('mysql');
 
 const client = new Client();
 
 let saveDevice = function (device, state) {
-    let db = new sqlite3.Database('/var/www/ElectricityMonitor/database.sqlite');
-    let stmt = db.prepare("REPLACE INTO hs110_details VALUES (?, ?, ?, ?, ?)");
-    stmt.run(
-        device.macNormalized.toLowerCase(),
-        device.alias,
-        device.host,
-        device.port,
-        state
-    );
-    stmt.finalize();
-    db.close();
+    connection = mysql.createConnection({
+        host     : 'localhost',
+        port     : 3307,
+        user     : 'elecricitymonitor',
+        password : 'elecricitymonitor',
+        database : 'elecricitymonitor'
+    });
+    let now = moment(new Date()).format("YYYY-MM-DD HH:mm:ss");
+
+    connection.beginTransaction(function(err) {
+        if (err) {throw err;}
+        let sql = "INSERT into tplink_devices (mac, alias, ip, port, online, created_at, updated_at) ";
+        let inserts = [
+            device.macNormalized.toLowerCase(),
+            Math.floor(Date.now() / 1000),
+            state.voltage_mv,
+            state.current_ma,
+            state.power_mw,
+            state.total_wh,
+            now,
+            now
+        ];
+        sql = mysql.format(sql, inserts);
+        connection.query(sql,{}, function (error, results, fields) {
+            if (error) {
+                let sql2 = "UPDATE tplink_devices SET alias = ??, ip = ??, port = ?, online = ?, updated_at = ??, updated_by = ? WHERE mac = ??";
+                let inserts2 = [
+                    Math.floor(Date.now() / 1000),
+                    state.voltage_mv,
+                    state.current_ma,
+                    state.power_mw,
+                    state.total_wh,
+                    now,
+                    1,
+                    device.macNormalized.toLowerCase(),
+                ];
+                connection.query(sql,{}, function (error, results, fields) {
+                    if (error) {
+                        return connection.rollback(function() {
+                            throw error;
+                        });
+                    } else {
+                        console.log("Updated " + results.affectedRows + " rows");
+                    }
+                });
+            } else {
+                console.log(results.insertId);
+            }
+        });
+    });
 };
 
 let saveMetrics = function (device, state) {
-    let db = new sqlite3.Database('/var/www/ElectricityMonitor/database.sqlite');
-    let stmt = db.prepare("INSERT INTO hs110 VALUES (?, ?, ?, ?, ?, ?)");
-    stmt.run(
+    connection = mysql.createConnection({
+        host     : 'localhost',
+        port     : 3307,
+        user     : 'elecricitymonitor',
+        password : 'elecricitymonitor',
+        database : 'elecricitymonitor'
+    });
+
+    let sql = "INSERT INTO tplinks (mac, timestamp, voltage_mv, current_ma, power_mw, total_wh, created_at, updated_at) VALUES (??, ?, ?, ?, ?, ?, ??, ??)";
+    let now = moment(new Date()).format("YYYY-MM-DD HH:mm:ss");
+    let inserts = [
         device.macNormalized.toLowerCase(),
         Math.floor(Date.now() / 1000),
         state.voltage_mv,
         state.current_ma,
         state.power_mw,
-        state.total_wh
-    );
-    stmt.finalize();
-    db.close();
+        state.total_wh,
+        now,
+        now
+    ];
+    sql = mysql.format(sql, inserts);
+
+    connection.query(sql,{}, function (error, results, fields) {
+        if (error) throw error;
+        console.log(results.insertId);
+    });
+
+    connection.end(function(err) {
+        if (error) throw error;
+    });
 };
 
 let logEvent = function (eventName, device, state) {
