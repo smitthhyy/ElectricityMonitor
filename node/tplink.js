@@ -1,3 +1,4 @@
+const moment = require('moment');
 const { Client } = require('tplink-smarthome-api');
 const util = require('util');
 // let sqlite3 = require('sqlite3').verbose();
@@ -8,7 +9,7 @@ const client = new Client();
 let saveDevice = function (device, state) {
     connection = mysql.createConnection({
         host     : 'localhost',
-        port     : 3307,
+        port     : 3306,
         user     : 'elecricitymonitor',
         password : 'elecricitymonitor',
         database : 'elecricitymonitor'
@@ -17,7 +18,7 @@ let saveDevice = function (device, state) {
 
     connection.beginTransaction(function(err) {
         if (err) {throw err;}
-        let sql = "INSERT into tplink_devices (mac, alias, ip, port, online, created_at, updated_at) ";
+        let sql = "INSERT into tplink_devices (mac, alias, ip, port, online, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?)";
         let inserts = [
             device.macNormalized.toLowerCase(),
             Math.floor(Date.now() / 1000),
@@ -61,7 +62,7 @@ let saveDevice = function (device, state) {
 let saveMetrics = function (device, state) {
     connection = mysql.createConnection({
         host     : 'localhost',
-        port     : 3307,
+        port     : 3306,
         user     : 'elecricitymonitor',
         password : 'elecricitymonitor',
         database : 'elecricitymonitor'

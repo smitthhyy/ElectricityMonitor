@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3e7ec3e5-6fae-4158-978e-d962bd7da734" name="Default Changelist" comment="">
+      <change afterPath="W:/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="W:/app/Channel.php" afterDir="false" />
+      <change afterPath="W:/app/Http/Controllers/Admin/ChannelsController.php" afterDir="false" />
+      <change afterPath="W:/app/Http/Controllers/Admin/ConfigController.php" afterDir="false" />
+      <change afterPath="W:/app/Http/Controllers/Admin/SensorsController.php" afterDir="false" />
+      <change afterPath="W:/app/Http/Controllers/Admin/SystemCalendarController.php" afterDir="false" />
+      <change afterPath="W:/app/Http/Controllers/Api/V1/Admin/ChannelsApiController.php" afterDir="false" />
+      <change afterPath="W:/app/Http/Controllers/Api/V1/Admin/ConfigApiController.php" afterDir="false" />
+      <change afterPath="W:/app/Http/Controllers/Api/V1/Admin/SensorsApiController.php" afterDir="false" />
+      <change afterPath="W:/app/Http/Requests/MassDestroyChannelRequest.php" afterDir="false" />
+      <change afterPath="W:/app/Http/Requests/MassDestroySensorRequest.php" afterDir="false" />
+      <change afterPath="W:/app/Http/Requests/StoreChannelRequest.php" afterDir="false" />
+      <change afterPath="W:/app/Http/Requests/StoreSensorRequest.php" afterDir="false" />
+      <change afterPath="W:/app/Http/Requests/UpdateChannelRequest.php" afterDir="false" />
+      <change afterPath="W:/app/Http/Requests/UpdateSensorRequest.php" afterDir="false" />
+      <change afterPath="W:/app/Http/Resources/Admin/ChannelResource.php" afterDir="false" />
+      <change afterPath="W:/app/Http/Resources/Admin/SensorResource.php" afterDir="false" />
+      <change afterPath="W:/app/Sensor.php" afterDir="false" />
+      <change afterPath="W:/database/migrations/2019_10_26_000007_create_sensors_table.php" afterDir="false" />
+      <change afterPath="W:/database/migrations/2019_10_26_000008_create_channels_table.php" afterDir="false" />
+      <change afterPath="W:/database/migrations/2019_10_26_000015_add_relationship_fields_to_channels_table.php" afterDir="false" />
+      <change afterPath="W:/resources/views/admin/channels/create.blade.php" afterDir="false" />
+      <change afterPath="W:/resources/views/admin/channels/edit.blade.php" afterDir="false" />
+      <change afterPath="W:/resources/views/admin/channels/index.blade.php" afterDir="false" />
+      <change afterPath="W:/resources/views/admin/channels/show.blade.php" afterDir="false" />
+      <change afterPath="W:/resources/views/admin/sensors/create.blade.php" afterDir="false" />
+      <change afterPath="W:/resources/views/admin/sensors/edit.blade.php" afterDir="false" />
+      <change afterPath="W:/resources/views/admin/sensors/index.blade.php" afterDir="false" />
+      <change afterPath="W:/resources/views/admin/sensors/show.blade.php" afterDir="false" />
+      <change afterPath="W:/test/app/Console/Kernel.php" afterDir="false" />
+      <change afterPath="W:/test/app/Exceptions/Handler.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Controllers/Admin/HomeController.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Controllers/Admin/InfeedController.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Controllers/Admin/PermissionsController.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Controllers/Admin/RolesController.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Controllers/Admin/TplinkController.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Controllers/Admin/TplinkDevicesController.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Controllers/Admin/UsersController.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Controllers/Api/V1/Admin/InfeedApiController.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Controllers/Api/V1/Admin/PermissionsApiController.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Controllers/Api/V1/Admin/RolesApiController.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Controllers/Api/V1/Admin/TplinkApiController.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Controllers/Api/V1/Admin/TplinkDevicesApiController.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Controllers/Api/V1/Admin/UsersApiController.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Controllers/Auth/ForgotPasswordController.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Controllers/Auth/ResetPasswordController.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Controllers/Auth/VerificationController.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Controllers/Controller.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Kernel.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Middleware/AuthGates.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Middleware/Authenticate.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Middleware/CheckForMaintenanceMode.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Middleware/EncryptCookies.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Middleware/SetLocale.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Middleware/TrimStrings.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Middleware/TrustProxies.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Requests/MassDestroyInfeedRequest.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Requests/MassDestroyPermissionRequest.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Requests/MassDestroyRoleRequest.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Requests/MassDestroyTplinkDeviceRequest.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Requests/MassDestroyTplinkRequest.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Requests/MassDestroyUserRequest.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Requests/StoreInfeedRequest.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Requests/StorePermissionRequest.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Requests/StoreRoleRequest.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Requests/StoreTplinkDeviceRequest.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Requests/StoreTplinkRequest.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Requests/StoreUserRequest.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Requests/UpdateInfeedRequest.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Requests/UpdatePermissionRequest.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Requests/UpdateRoleRequest.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Requests/UpdateTplinkDeviceRequest.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Requests/UpdateTplinkRequest.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Requests/UpdateUserRequest.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Resources/Admin/InfeedResource.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Resources/Admin/PermissionResource.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Resources/Admin/RoleResource.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Resources/Admin/TplinkDeviceResource.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Resources/Admin/TplinkResource.php" afterDir="false" />
+      <change afterPath="W:/test/app/Http/Resources/Admin/UserResource.php" afterDir="false" />
+      <change afterPath="W:/test/app/Infeed.php" afterDir="false" />
+      <change afterPath="W:/test/app/Permission.php" afterDir="false" />
+      <change afterPath="W:/test/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change afterPath="W:/test/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change afterPath="W:/test/app/Providers/BroadcastServiceProvider.php" afterDir="false" />
+      <change afterPath="W:/test/app/Providers/EventServiceProvider.php" afterDir="false" />
+      <change afterPath="W:/test/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change afterPath="W:/test/app/Role.php" afterDir="false" />
+      <change afterPath="W:/test/app/Tplink.php" afterDir="false" />
+      <change afterPath="W:/test/app/TplinkDevice.php" afterDir="false" />
+      <change afterPath="W:/test/app/User.php" afterDir="false" />
+      <change afterPath="W:/test/database/.gitignore" afterDir="false" />
+      <change afterPath="W:/test/database/factories/UserFactory.php" afterDir="false" />
+      <change afterPath="W:/test/database/migrations/2014_10_12_100000_create_password_resets_table.php" afterDir="false" />
+      <change afterPath="W:/test/database/migrations/2019_10_26_000001_create_permissions_table.php" afterDir="false" />
+      <change afterPath="W:/test/database/migrations/2019_10_26_000002_create_roles_table.php" afterDir="false" />
+      <change afterPath="W:/test/database/migrations/2019_10_26_000003_create_users_table.php" afterDir="false" />
+      <change afterPath="W:/test/database/migrations/2019_10_26_000004_create_infeeds_table.php" afterDir="false" />
+      <change afterPath="W:/test/database/migrations/2019_10_26_000005_create_tplinks_table.php" afterDir="false" />
+      <change afterPath="W:/test/database/migrations/2019_10_26_000006_create_tplink_devices_table.php" afterDir="false" />
+      <change afterPath="W:/test/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change afterPath="W:/test/database/seeds/PermissionRoleTableSeeder.php" afterDir="false" />
+      <change afterPath="W:/test/database/seeds/PermissionsTableSeeder.php" afterDir="false" />
+      <change afterPath="W:/test/database/seeds/RoleUserTableSeeder.php" afterDir="false" />
+      <change afterPath="W:/test/database/seeds/RolesTableSeeder.php" afterDir="false" />
+      <change afterPath="W:/test/database/seeds/UsersTableSeeder.php" afterDir="false" />
+      <change afterPath="W:/test/resources/js/app.js" afterDir="false" />
+      <change afterPath="W:/test/resources/js/bootstrap.js" afterDir="false" />
+      <change afterPath="W:/test/resources/lang/en/auth.php" afterDir="false" />
+      <change afterPath="W:/test/resources/lang/en/cruds.php" afterDir="false" />
+      <change afterPath="W:/test/resources/lang/en/global.php" afterDir="false" />
+      <change afterPath="W:/test/resources/lang/en/pagination.php" afterDir="false" />
+      <change afterPath="W:/test/resources/lang/en/panel.php" afterDir="false" />
+      <change afterPath="W:/test/resources/lang/en/passwords.php" afterDir="false" />
+      <change afterPath="W:/test/resources/lang/en/validation.php" afterDir="false" />
+      <change afterPath="W:/test/resources/sass/app.scss" afterDir="false" />
+      <change afterPath="W:/test/resources/views/admin/infeeds/create.blade.php" afterDir="false" />
+      <change afterPath="W:/test/resources/views/admin/infeeds/edit.blade.php" afterDir="false" />
+      <change afterPath="W:/test/resources/views/admin/infeeds/index.blade.php" afterDir="false" />
+      <change afterPath="W:/test/resources/views/admin/infeeds/show.blade.php" afterDir="false" />
+      <change afterPath="W:/test/resources/views/admin/permissions/create.blade.php" afterDir="false" />
+      <change afterPath="W:/test/resources/views/admin/permissions/edit.blade.php" afterDir="false" />
+      <change afterPath="W:/test/resources/views/admin/permissions/index.blade.php" afterDir="false" />
+      <change afterPath="W:/test/resources/views/admin/permissions/show.blade.php" afterDir="false" />
+      <change afterPath="W:/test/resources/views/admin/roles/create.blade.php" afterDir="false" />
+      <change afterPath="W:/test/resources/views/admin/roles/edit.blade.php" afterDir="false" />
+      <change afterPath="W:/test/resources/views/admin/roles/index.blade.php" afterDir="false" />
+      <change afterPath="W:/test/resources/views/admin/roles/show.blade.php" afterDir="false" />
+      <change afterPath="W:/test/resources/views/admin/tplinkDevices/create.blade.php" afterDir="false" />
+      <change afterPath="W:/test/resources/views/admin/tplinkDevices/edit.blade.php" afterDir="false" />
+      <change afterPath="W:/test/resources/views/admin/tplinkDevices/index.blade.php" afterDir="false" />
+      <change afterPath="W:/test/resources/views/admin/tplinkDevices/show.blade.php" afterDir="false" />
+      <change afterPath="W:/test/resources/views/admin/tplinks/create.blade.php" afterDir="false" />
+      <change afterPath="W:/test/resources/views/admin/tplinks/edit.blade.php" afterDir="false" />
+      <change afterPath="W:/test/resources/views/admin/tplinks/index.blade.php" afterDir="false" />
+      <change afterPath="W:/test/resources/views/admin/tplinks/show.blade.php" afterDir="false" />
+      <change afterPath="W:/test/resources/views/admin/users/create.blade.php" afterDir="false" />
+      <change afterPath="W:/test/resources/views/admin/users/edit.blade.php" afterDir="false" />
+      <change afterPath="W:/test/resources/views/admin/users/index.blade.php" afterDir="false" />
+      <change afterPath="W:/test/resources/views/admin/users/show.blade.php" afterDir="false" />
+      <change afterPath="W:/test/resources/views/auth/login.blade.php" afterDir="false" />
+      <change afterPath="W:/test/resources/views/auth/passwords/email.blade.php" afterDir="false" />
+      <change afterPath="W:/test/resources/views/auth/passwords/reset.blade.php" afterDir="false" />
+      <change afterPath="W:/test/resources/views/home.blade.php" afterDir="false" />
+      <change afterPath="W:/test/resources/views/layouts/admin.blade.php" afterDir="false" />
+      <change afterPath="W:/test/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change afterPath="W:/test/resources/views/partials/datatablesActions.blade.php" afterDir="false" />
+      <change afterPath="W:/test/resources/views/partials/menu.blade.php" afterDir="false" />
+      <change afterPath="W:/test/resources/views/welcome.blade.php" afterDir="false" />
+      <change afterPath="W:/test/routes/api.php" afterDir="false" />
+      <change afterPath="W:/test/routes/channels.php" afterDir="false" />
+      <change afterPath="W:/test/routes/console.php" afterDir="false" />
+      <change afterPath="W:/test/routes/web.php" afterDir="false" />
+      <change beforePath="W:/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="W:/.idea/ElectricityMonitor.iml" beforeDir="false" />
+      <change beforePath="W:/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="W:/.idea/deployment.xml" beforeDir="false" />
+      <change beforePath="W:/.idea/laravel-plugin.xml" beforeDir="false" />
+      <change beforePath="W:/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="W:/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="W:/.idea/php.xml" beforeDir="false" afterPath="W:/.idea/php.xml" afterDir="false" />
+      <change beforePath="W:/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="W:/app/Http/Controllers/Admin/HomeController.php" beforeDir="false" afterPath="W:/app/Http/Controllers/Admin/HomeController.php" afterDir="false" />
+      <change beforePath="W:/app/Http/Controllers/Admin/InfeedController.php" beforeDir="false" afterPath="W:/app/Http/Controllers/Admin/InfeedController.php" afterDir="false" />
+      <change beforePath="W:/app/Http/Controllers/Admin/TplinkController.php" beforeDir="false" afterPath="W:/app/Http/Controllers/Admin/TplinkController.php" afterDir="false" />
+      <change beforePath="W:/app/Http/Controllers/Admin/TplinkDevicesController.php" beforeDir="false" afterPath="W:/app/Http/Controllers/Admin/TplinkDevicesController.php" afterDir="false" />
+      <change beforePath="W:/app/Http/Controllers/Api/V1/Admin/InfeedApiController.php" beforeDir="false" afterPath="W:/app/Http/Controllers/Api/V1/Admin/InfeedApiController.php" afterDir="false" />
+      <change beforePath="W:/app/Http/Requests/StoreInfeedRequest.php" beforeDir="false" afterPath="W:/app/Http/Requests/StoreInfeedRequest.php" afterDir="false" />
+      <change beforePath="W:/app/Http/Requests/UpdateInfeedRequest.php" beforeDir="false" afterPath="W:/app/Http/Requests/UpdateInfeedRequest.php" afterDir="false" />
+      <change beforePath="W:/app/Infeed.php" beforeDir="false" afterPath="W:/app/Infeed.php" afterDir="false" />
+      <change beforePath="W:/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="W:/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="W:/app/User.php" beforeDir="false" afterPath="W:/app/User.php" afterDir="false" />
+      <change beforePath="W:/config/app.php" beforeDir="false" afterPath="W:/config/app.php" afterDir="false" />
+      <change beforePath="W:/database/migrations/2019_09_29_000000_create_permissions_table.php" beforeDir="false" afterPath="W:/database/migrations/2019_10_26_000001_create_permissions_table.php" afterDir="false" />
+      <change beforePath="W:/database/migrations/2019_09_29_000001_create_roles_table.php" beforeDir="false" afterPath="W:/database/migrations/2019_10_26_000002_create_roles_table.php" afterDir="false" />
+      <change beforePath="W:/database/migrations/2019_09_29_000002_create_users_table.php" beforeDir="false" afterPath="W:/database/migrations/2019_10_26_000003_create_users_table.php" afterDir="false" />
+      <change beforePath="W:/database/migrations/2019_09_29_000003_create_infeeds_table.php" beforeDir="false" afterPath="W:/database/migrations/2019_10_26_000004_create_infeeds_table.php" afterDir="false" />
+      <change beforePath="W:/database/migrations/2019_09_29_000004_create_tplinks_table.php" beforeDir="false" afterPath="W:/database/migrations/2019_10_26_000005_create_tplinks_table.php" afterDir="false" />
+      <change beforePath="W:/database/migrations/2019_09_29_000005_create_tplink_devices_table.php" beforeDir="false" afterPath="W:/database/migrations/2019_10_26_000006_create_tplink_devices_table.php" afterDir="false" />
+      <change beforePath="W:/database/migrations/2019_09_29_000006_create_permission_role_pivot_table.php" beforeDir="false" afterPath="W:/database/migrations/2019_10_26_000009_create_permission_role_pivot_table.php" afterDir="false" />
+      <change beforePath="W:/database/migrations/2019_09_29_000007_create_role_user_pivot_table.php" beforeDir="false" afterPath="W:/database/migrations/2019_10_26_000010_create_role_user_pivot_table.php" afterDir="false" />
+      <change beforePath="W:/database/migrations/2019_09_29_000008_add_relationship_fields_to_permissions_table.php" beforeDir="false" afterPath="W:/database/migrations/2019_10_26_000011_add_relationship_fields_to_permissions_table.php" afterDir="false" />
+      <change beforePath="W:/database/migrations/2019_09_29_000009_add_relationship_fields_to_users_table.php" beforeDir="false" afterPath="W:/database/migrations/2019_10_26_000012_add_relationship_fields_to_users_table.php" afterDir="false" />
+      <change beforePath="W:/database/migrations/2019_09_29_000010_add_relationship_fields_to_infeeds_table.php" beforeDir="false" />
+      <change beforePath="W:/database/migrations/2019_09_29_000011_add_relationship_fields_to_tplinks_table.php" beforeDir="false" afterPath="W:/database/migrations/2019_10_26_000013_add_relationship_fields_to_tplinks_table.php" afterDir="false" />
+      <change beforePath="W:/database/migrations/2019_09_29_000012_add_relationship_fields_to_tplink_devices_table.php" beforeDir="false" afterPath="W:/database/migrations/2019_10_26_000014_add_relationship_fields_to_tplink_devices_table.php" afterDir="false" />
+      <change beforePath="W:/database/seeds/PermissionsTableSeeder.php" beforeDir="false" afterPath="W:/database/seeds/PermissionsTableSeeder.php" afterDir="false" />
+      <change beforePath="W:/database/seeds/RoleUserTableSeeder.php" beforeDir="false" afterPath="W:/database/seeds/RoleUserTableSeeder.php" afterDir="false" />
+      <change beforePath="W:/database/seeds/UsersTableSeeder.php" beforeDir="false" afterPath="W:/database/seeds/UsersTableSeeder.php" afterDir="false" />
+      <change beforePath="W:/node/envi-r.js" beforeDir="false" afterPath="W:/node/envi-r.js" afterDir="false" />
+      <change beforePath="W:/node/tplink.js" beforeDir="false" afterPath="W:/node/tplink.js" afterDir="false" />
+      <change beforePath="W:/package-lock.json" beforeDir="false" />
+      <change beforePath="W:/package.json" beforeDir="false" afterPath="W:/package.json" afterDir="false" />
+      <change beforePath="W:/resources/lang/en/cruds.php" beforeDir="false" afterPath="W:/resources/lang/en/cruds.php" afterDir="false" />
+      <change beforePath="W:/resources/lang/en/global.php" beforeDir="false" afterPath="W:/resources/lang/en/global.php" afterDir="false" />
+      <change beforePath="W:/resources/views/admin/infeeds/create.blade.php" beforeDir="false" afterPath="W:/resources/views/admin/infeeds/create.blade.php" afterDir="false" />
+      <change beforePath="W:/resources/views/admin/infeeds/edit.blade.php" beforeDir="false" afterPath="W:/resources/views/admin/infeeds/edit.blade.php" afterDir="false" />
+      <change beforePath="W:/resources/views/admin/infeeds/index.blade.php" beforeDir="false" afterPath="W:/resources/views/admin/infeeds/index.blade.php" afterDir="false" />
+      <change beforePath="W:/resources/views/admin/infeeds/show.blade.php" beforeDir="false" afterPath="W:/resources/views/admin/infeeds/show.blade.php" afterDir="false" />
+      <change beforePath="W:/resources/views/admin/tplinkDevices/index.blade.php" beforeDir="false" afterPath="W:/resources/views/admin/tplinkDevices/index.blade.php" afterDir="false" />
+      <change beforePath="W:/resources/views/admin/tplinks/index.blade.php" beforeDir="false" afterPath="W:/resources/views/admin/tplinks/index.blade.php" afterDir="false" />
+      <change beforePath="W:/resources/views/admin/users/create.blade.php" beforeDir="false" afterPath="W:/resources/views/admin/users/create.blade.php" afterDir="false" />
+      <change beforePath="W:/resources/views/admin/users/edit.blade.php" beforeDir="false" afterPath="W:/resources/views/admin/users/edit.blade.php" afterDir="false" />
+      <change beforePath="W:/resources/views/admin/users/index.blade.php" beforeDir="false" afterPath="W:/resources/views/admin/users/index.blade.php" afterDir="false" />
+      <change beforePath="W:/resources/views/admin/users/show.blade.php" beforeDir="false" afterPath="W:/resources/views/admin/users/show.blade.php" afterDir="false" />
+      <change beforePath="W:/resources/views/auth/login.blade.php" beforeDir="false" afterPath="W:/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="W:/resources/views/auth/passwords/email.blade.php" beforeDir="false" afterPath="W:/resources/views/auth/passwords/email.blade.php" afterDir="false" />
+      <change beforePath="W:/resources/views/auth/passwords/reset.blade.php" beforeDir="false" afterPath="W:/resources/views/auth/passwords/reset.blade.php" afterDir="false" />
+      <change beforePath="W:/resources/views/home.blade.php" beforeDir="false" afterPath="W:/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="W:/resources/views/partials/menu.blade.php" beforeDir="false" afterPath="W:/resources/views/partials/menu.blade.php" afterDir="false" />
+      <change beforePath="W:/routes/api.php" beforeDir="false" afterPath="W:/routes/api.php" afterDir="false" />
+      <change beforePath="W:/routes/web.php" beforeDir="false" afterPath="W:/routes/web.php" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>W:/composer.json</pharConfigPath>
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="W:/" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="W:/vendor/hamcrest/hamcrest-php" />
+      <path value="W:/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="W:/vendor/swiftmailer/swiftmailer" />
+      <path value="W:/vendor/scrivo/highlight.php" />
+      <path value="W:/vendor/fzaninotto/faker" />
+      <path value="W:/vendor/phar-io/manifest" />
+      <path value="W:/vendor/phar-io/version" />
+      <path value="W:/vendor/ramsey/uuid" />
+      <path value="W:/vendor/phpoption/phpoption" />
+      <path value="W:/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="W:/vendor/yajra/laravel-datatables-oracle" />
+      <path value="W:/vendor/dragonmantank/cron-expression" />
+      <path value="W:/vendor/zendframework/zend-diactoros" />
+      <path value="W:/vendor/psy/psysh" />
+      <path value="W:/vendor/guzzlehttp/guzzle" />
+      <path value="W:/vendor/guzzlehttp/psr7" />
+      <path value="W:/vendor/guzzlehttp/promises" />
+      <path value="W:/vendor/phpunit/phpunit" />
+      <path value="W:/vendor/phpunit/php-code-coverage" />
+      <path value="W:/vendor/phpunit/php-file-iterator" />
+      <path value="W:/vendor/phpunit/php-timer" />
+      <path value="W:/vendor/phpunit/php-text-template" />
+      <path value="W:/vendor/phpunit/php-token-stream" />
+      <path value="W:/vendor/phpdocumentor/reflection-common" />
+      <path value="W:/vendor/phpdocumentor/reflection-docblock" />
+      <path value="W:/vendor/phpdocumentor/type-resolver" />
+      <path value="W:/vendor/erusev/parsedown" />
+      <path value="W:/vendor/vlucas/phpdotenv" />
+      <path value="W:/vendor/symfony/event-dispatcher" />
+      <path value="W:/vendor/symfony/polyfill-intl-idn" />
+      <path value="W:/vendor/symfony/event-dispatcher-contracts" />
+      <path value="W:/vendor/symfony/polyfill-iconv" />
+      <path value="W:/vendor/symfony/css-selector" />
+      <path value="W:/vendor/symfony/routing" />
+      <path value="W:/vendor/symfony/mime" />
+      <path value="W:/vendor/symfony/process" />
+      <path value="W:/vendor/symfony/debug" />
+      <path value="W:/vendor/symfony/service-contracts" />
+      <path value="W:/vendor/symfony/translation-contracts" />
+      <path value="W:/vendor/symfony/translation" />
+      <path value="W:/vendor/symfony/console" />
+      <path value="W:/vendor/symfony/finder" />
+      <path value="W:/vendor/symfony/var-dumper" />
+      <path value="W:/vendor/symfony/http-kernel" />
+      <path value="W:/vendor/symfony/polyfill-ctype" />
+      <path value="W:/vendor/symfony/http-foundation" />
+      <path value="W:/vendor/symfony/polyfill-mbstring" />
+      <path value="W:/vendor/symfony/polyfill-php72" />
+      <path value="W:/vendor/symfony/polyfill-php73" />
+      <path value="W:/vendor/symfony/psr-http-message-bridge" />
+      <path value="W:/vendor/egulias/email-validator" />
+      <path value="W:/vendor/phpspec/prophecy" />
+      <path value="W:/vendor/defuse/php-encryption" />
+      <path value="W:/vendor/composer" />
+      <path value="W:/vendor/filp/whoops" />
+      <path value="W:/vendor/facade/flare-client-php" />
+      <path value="W:/vendor/facade/ignition-contracts" />
+      <path value="W:/vendor/facade/ignition" />
+      <path value="W:/vendor/sebastian/type" />
+      <path value="W:/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="W:/vendor/sebastian/version" />
+      <path value="W:/vendor/sebastian/object-reflector" />
+      <path value="W:/vendor/sebastian/comparator" />
+      <path value="W:/vendor/sebastian/environment" />
+      <path value="W:/vendor/sebastian/object-enumerator" />
+      <path value="W:/vendor/sebastian/exporter" />
+      <path value="W:/vendor/sebastian/diff" />
+      <path value="W:/vendor/sebastian/global-state" />
+      <path value="W:/vendor/sebastian/recursion-context" />
+      <path value="W:/vendor/sebastian/resource-operations" />
+      <path value="W:/vendor/doctrine/inflector" />
+      <path value="W:/vendor/doctrine/dbal" />
+      <path value="W:/vendor/doctrine/lexer" />
+      <path value="W:/vendor/doctrine/event-manager" />
+      <path value="W:/vendor/doctrine/cache" />
+      <path value="W:/vendor/doctrine/instantiator" />
+      <path value="W:/vendor/opis/closure" />
+      <path value="W:/vendor/lcobucci/jwt" />
+      <path value="W:/vendor/firebase/php-jwt" />
+      <path value="W:/vendor/league/event" />
+      <path value="W:/vendor/league/flysystem" />
+      <path value="W:/vendor/league/oauth2-server" />
+      <path value="W:/vendor/paragonie/random_compat" />
+      <path value="W:/vendor/phpseclib/phpseclib" />
+      <path value="W:/vendor/mockery/mockery" />
+      <path value="W:/vendor/monolog/monolog" />
+      <path value="W:/vendor/jakub-onderka/php-console-color" />
+      <path value="W:/vendor/jakub-onderka/php-console-highlighter" />
+      <path value="W:/vendor/laraveldaily/laravel-charts" />
+      <path value="W:/vendor/nesbot/carbon" />
+      <path value="W:/vendor/laravel/tinker" />
+      <path value="W:/vendor/laravel/framework" />
+      <path value="W:/vendor/laravel/passport" />
+      <path value="W:/vendor/theseer/tokenizer" />
+      <path value="W:/vendor/webmozart/assert" />
+      <path value="W:/vendor/myclabs/deep-copy" />
+      <path value="W:/vendor/ralouphie/getallheaders" />
+      <path value="W:/vendor/nunomaduro/collision" />
+      <path value="W:/vendor/fideloper/proxy" />
+      <path value="W:/vendor/psr/http-factory" />
+      <path value="W:/vendor/psr/log" />
+      <path value="W:/vendor/psr/container" />
+      <path value="W:/vendor/psr/http-message" />
+      <path value="W:/vendor/psr/simple-cache" />
+      <path value="W:/vendor/nikic/php-parser" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1SjuKZQJXzcSYXO59xtQBR2bft1" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Dropbox (IoTSD)/workspace" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3e7ec3e5-6fae-4158-978e-d962bd7da734" name="Default Changelist" comment="" />
+      <created>1572089262272</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1572089262272</updated>
+      <workItem from="1572089269372" duration="10711000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

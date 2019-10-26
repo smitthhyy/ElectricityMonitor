@@ -106,7 +106,7 @@ return [
     |
     */
 
-    'faker_locale' => 'en_US',
+    'faker_locale' => 'en_AU',
 
     /*
     |--------------------------------------------------------------------------
@@ -133,6 +133,8 @@ return [
     | this array to grant expanded functionality to your applications.
     |
     */
+
+    'costPerKWH' => env('costPerKWH', 0.40),
 
     'providers' => [
 
