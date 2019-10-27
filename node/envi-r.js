@@ -12,10 +12,10 @@ port.on('data', function(data) {
     buffer += data.toString();
 
     if ( (buffer.trim().startsWith('<msg>')) && (buffer.trim().endsWith('</msg>')) && (buffer.trim().includes('<watts>')) ) {
-        console.log("Buffer: " + buffer);
+        // console.log("Buffer: " + buffer);
         let strArray = buffer.split("\n");
             strArray.forEach(function (str) {
-                console.log("String: |" + str + "|");
+                // console.log("String: |" + str + "|");
                 if ((!str.trim().includes('<hist>')) && (str.trim().startsWith('<msg>')) && (str.trim().endsWith('</msg>'))) {
                     parseString(str, function (err, result) {
                         updateSensor('main-elec', result);
@@ -48,11 +48,11 @@ let flattenDataObject = function(dataObject) {
 
 let updateSensor = function(id, object) {
     object = flattenDataObject(object);
-    console.log(object);
+    // console.log(object);
     // get sensors.id from db using data.id
     // get channel.id from
     watts = parseInt(object.phase1, 10) + parseInt(object.phase2, 10) + parseInt(object.phase3, 10);
-    console.log("watts = " + watts.toString() + " phase1: " + parseInt(object.phase1, 10).toString() + " + phase2: " + parseInt(object.phase2, 10).toString() + " + phase3: " + parseInt(object.phase3, 10).toString());
+    // console.log("watts = " + watts.toString() + " phase1: " + parseInt(object.phase1, 10).toString() + " + phase2: " + parseInt(object.phase2, 10).toString() + " + phase3: " + parseInt(object.phase3, 10).toString());
     saveToDB(object);
 };
 
@@ -80,7 +80,7 @@ let saveToDB = function(object) {
 
     connection.query(sql, function (error, results, fields) {
         if (error) throw error;
-        console.log(results.insertId);
+        // console.log(results.insertId);
     });
 
     connection.end(function(err) {

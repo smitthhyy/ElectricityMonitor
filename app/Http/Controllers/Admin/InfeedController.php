@@ -74,7 +74,8 @@ class InfeedController extends Controller
     public function costlasthour()
     {
         abort_if(Gate::denies('infeed_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-        $records = Infeed::where('timestamp', '>', time() - (60 * 60))->get();
+        $time = time();
+        $records = Infeed::where('timestamp', '>', $time - (60 * 60))->get();
         $data = [
             'ch1' => 0,
             'ch2' => 0,
@@ -83,20 +84,23 @@ class InfeedController extends Controller
             'ch2Cost' => 0,
             'ch3Cost' => 0,
         ];
-        $cost = config('app.costPerKWH') / 10; // record every 6 seconds
+        $cost = config('app.costPerKWH'); // record every 6 seconds
         $i = 0;
         foreach ($records as $record) {
             $data['ch1'] += $record->ch_1;
-            $data['ch1Cost'] += $record->ch_1 * $cost;
             $data['ch2'] += $record->ch_2;
-            $data['ch2Cost'] += $record->ch_2 * $cost;
             $data['ch3'] += $record->ch_3;
-            $data['ch3Cost'] += $record->ch_3 * $cost;
             $i++;
         }
-        $data['ch1'] = $data['ch1'] / $i;
-        $data['ch2'] = $data['ch2'] / $i;
-        $data['ch3'] = $data['ch3'] / $i;
+        $data['ch1'] = ($data['ch1'] / $i) / 1000;
+        $data['ch2'] = ($data['ch2'] / $i) / 1000;
+        $data['ch3'] = ($data['ch3'] / $i) / 1000;
+        $data['total'] = $data['ch1'] + $data['ch2'] + $data['ch3'];
+        $data['ch1Cost'] = $data['ch1'] * $cost;
+        $data['ch2Cost'] = $data['ch2'] * $cost;
+        $data['ch3Cost'] = $data['ch3'] * $cost;
+        $data['totalCost'] = $data['ch1Cost'] + $data['ch2Cost'] + $data['ch3Cost'];
+        $data['asAt'] = $time;
         return $data;
     }
 
