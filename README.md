@@ -1,5 +1,5 @@
 # Trevor's Electricity Monitor
-### 30th Sep 2019 update
+### 27th Oct 2019 update
 Initial development, **not a complete application yet** (but getting close now) - check back later.
 ## Description
 Monitor electricity useage in my home using a number of technologies including:
