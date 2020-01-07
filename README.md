@@ -1,6 +1,7 @@
 # Trevor's Electricity Monitor
-### 27th Oct 2019 update
+### 8th Jan 2020 update
 Initial development, **not a complete application yet** (but getting close now) - check back later.
+Working on an issue with datatables and the search function breaking when making changes to parts of the code.
 ## Description
 Monitor electricity useage in my home using a number of technologies including:
 - CurrentCost Envi-R 3 phase mains monitor
@@ -15,4 +16,6 @@ Monitor electricity useage in my home using a number of technologies including:
 5. cp .env.example .env
 6. edit .env file
 7. php artisan key:generate
-7. php artisan migrate --seed
+8. php artisan migrate --seed
+
+The initial username:password are admin@admin.com:password

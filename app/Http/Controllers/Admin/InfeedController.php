@@ -57,7 +57,7 @@ class InfeedController extends Controller
                 return $row->sensor ? $row->sensor : "";
             });
 
-            $table->rawColumns(['actions', 'placeholder']);
+            $table->rawColumns(['actions', 'placeholder', 'timestamp']);
 
             return $table->make(true);
         }
