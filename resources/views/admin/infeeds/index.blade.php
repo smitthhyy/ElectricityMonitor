@@ -100,24 +100,11 @@
                 { data: 'actions', name: '{{ trans('global.actions') }}' }
             ],
             order: [[ 1, 'desc' ]],
-            pageLength: 100,
-            columnDefs: [
-                {
-                    // The `data` parameter refers to the data for the cell (defined by the
-                    // `data` option, which defaults to the column being worked with, in
-                    // this case `data: 0`.
-                    render: function ( data, type, row ) {
-                        let zone =  moment.tz.guess();
-                        let timezone = moment.tz(zone).zoneAbbr();
-                        return moment.unix(row.timestamp).format("YYYY-MM-DD HH:mm:ss") + " " + timezone;
-                    },
-                    targets: 2
-                }
-            ]
+            pageLength: 100
         };
         $('.datatable-Infeed').DataTable(dtOverrideGlobals);
-            $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
-                $($.fn.dataTable.tables(true)).DataTable().columns.adjust();
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
+            $($.fn.dataTable.tables(true)).DataTable().columns.adjust();
         });
     });
 

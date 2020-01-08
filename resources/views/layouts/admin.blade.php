@@ -138,6 +138,14 @@
                         orderable: false,
                         searchable: false,
                         targets: -1
+                    },
+                    {
+                        render: function ( data, type, row ) {
+                            let zone =  moment.tz.guess();
+                            let timezone = moment.tz(zone).zoneAbbr();
+                            return moment.unix(row.timestamp).format("YYYY-MM-DD HH:mm:ss") + " " + timezone;
+                        },
+                        targets: 2
                     }
                 ],
                 select: {
